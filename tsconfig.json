@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "simple-dynamic-forms": [
+        "dist/simple-dynamic-forms"
+      ],
+      "simple-dynamic-forms/*": [
+        "dist/simple-dynamic-forms/*"
+      ]
+    }
   }
 }
