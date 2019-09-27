@@ -6,6 +6,8 @@ import { SimpleConstructedForm } from 'projects/simple-dynamic-forms/src/lib/int
 import { SimpleFormsService } from 'projects/simple-dynamic-forms/src/lib/services/simple-forms.service';
 // tslint:disable-next-line:max-line-length
 import { BootstrapCheckboxComponent } from 'projects/bootstrap-components/src/lib/components/bootstrap-checkbox/bootstrap-checkbox.component';
+import { of } from 'rxjs';
+import { BootstrapSelectComponent } from 'projects/bootstrap-components/src/lib/components/bootstrap-select/bootstrap-select.component';
 
 @Component({
   selector: 'app-bootstrap-examples',
@@ -20,6 +22,16 @@ export class BootstrapExamplesComponent implements OnInit {
       },
       {
         item: new SimpleInput<any>({ property: 'masterChef', value: true }, BootstrapCheckboxComponent)
+      },
+      {
+        item: new SimpleInput<any>(
+          {
+            property: 'izbira',
+            value: true,
+            options: of([{ id: 1, value: 'enka' }, { id: 2, value: 'dvojka' }])
+          },
+          BootstrapSelectComponent
+        )
       }
     ]
   };

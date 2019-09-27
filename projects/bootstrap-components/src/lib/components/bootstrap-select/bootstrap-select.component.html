@@ -1,1 +1,16 @@
-<p>bootstrap-select works!</p>
+<div class="form-group" [formGroup]="form">
+
+  <select class="form-control" [formControlName]="formControlName">
+    <option disabled [attr.selected]="getEmptySelectedValue()" [value]="null" i18n>
+      Select an option
+    </option>
+    <option *ngFor="let option of options | async"
+            (keydown.enter)="onSelect(option.id)"
+            (click)="onSelect(option.id)"
+            [attr.selected]="getSelectedValue(option.id)"
+            value="{{option.id}}">
+      {{option.value}}
+    </option>
+  </select>
+
+</div>
