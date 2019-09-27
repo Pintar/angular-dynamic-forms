@@ -4,6 +4,8 @@ import { SimpleInput } from 'projects/simple-dynamic-forms/src/lib/models/simple
 import { BootstrapInputComponent } from 'projects/bootstrap-components/src/lib/components/bootstrap-input/bootstrap-input.component';
 import { SimpleConstructedForm } from 'projects/simple-dynamic-forms/src/lib/interfaces/simple-constructed-form.interface';
 import { SimpleFormsService } from 'projects/simple-dynamic-forms/src/lib/services/simple-forms.service';
+// tslint:disable-next-line:max-line-length
+import { BootstrapCheckboxComponent } from 'projects/bootstrap-components/src/lib/components/bootstrap-checkbox/bootstrap-checkbox.component';
 
 @Component({
   selector: 'app-bootstrap-examples',
@@ -15,6 +17,9 @@ export class BootstrapExamplesComponent implements OnInit {
     items: [
       {
         item: new SimpleInput<any>({ property: 'ime', value: 'aljaz' }, BootstrapInputComponent)
+      },
+      {
+        item: new SimpleInput<any>({ property: 'masterChef', value: true }, BootstrapCheckboxComponent)
       }
     ]
   };

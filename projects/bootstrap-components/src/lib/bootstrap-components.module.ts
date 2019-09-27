@@ -20,7 +20,22 @@ import { ReactiveFormsModule } from '@angular/forms';
     BootstrapRadioComponent
   ],
   imports: [CommonModule, ReactiveFormsModule],
-  exports: [BootstrapComponentsComponent, BootstrapInputComponent],
-  entryComponents: [BootstrapInputComponent]
+  exports: [
+    BootstrapComponentsComponent,
+    BootstrapInputComponent,
+    BootstrapSelectComponent,
+    BootstrapTextareaComponent,
+    BootstrapDatepickerComponent,
+    BootstrapCheckboxComponent,
+    BootstrapRadioComponent
+  ],
+  entryComponents: [
+    BootstrapInputComponent,
+    BootstrapSelectComponent,
+    BootstrapTextareaComponent,
+    BootstrapDatepickerComponent,
+    BootstrapCheckboxComponent,
+    BootstrapRadioComponent
+  ]
 })
 export class BootstrapComponentsModule {}
