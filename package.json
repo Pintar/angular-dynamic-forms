@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:showcase": "ng serve forms-showcase",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -35,6 +36,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.6",
+    "@angular-devkit/build-ng-packagr": "~0.803.6",
     "@angular/cli": "~8.3.6",
     "@angular/compiler-cli": "~8.2.8",
     "@angular/language-service": "~8.2.8",

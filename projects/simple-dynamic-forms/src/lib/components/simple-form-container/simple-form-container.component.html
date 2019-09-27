@@ -1,0 +1,8 @@
+<ng-content select=[form-header]>
+</ng-content>
+
+<lib-item-renderer *ngFor="let item of config.items;" [formItem]="item"></lib-item-renderer>
+
+<div class="simple-form-row">
+  <button type="submit" [disabled]="!canSave()">Save</button>
+</div>

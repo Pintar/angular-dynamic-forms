@@ -24,6 +24,12 @@
       ],
       "simple-dynamic-forms/*": [
         "dist/simple-dynamic-forms/*"
+      ],
+      "bootstrap-components": [
+        "dist/bootstrap-components"
+      ],
+      "bootstrap-components/*": [
+        "dist/bootstrap-components/*"
       ]
     }
   }
