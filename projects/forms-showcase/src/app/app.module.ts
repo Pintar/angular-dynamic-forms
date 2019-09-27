@@ -1,13 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
-import { SimpleDynamicFormsModule } from 'projects/simple-dynamic-forms/src/lib/simple-dynamic-forms.module';
-import { BootstrapComponentsModule } from 'projects/bootstrap-components/src/public-api';
+import { AppRoutingModule } from './app.routing';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, SimpleDynamicFormsModule, BootstrapComponentsModule],
+  imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })

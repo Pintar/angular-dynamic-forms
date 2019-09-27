@@ -7,23 +7,10 @@ import { SimpleConstructedForm } from 'projects/simple-dynamic-forms/src/lib/int
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
-  title = 'forms-showcase';
-  config: SimpleFormConfig = {
-    items: [
-      {
-        item: new SimpleInput<any>({ property: 'ime', value: 'aljaz' }, BootstrapInputComponent)
-      }
-    ]
-  };
-  formData: SimpleConstructedForm[];
+  constructor() {}
 
-  constructor(private service: SimpleFormsService) {}
-
-  ngOnInit() {
-    this.formData = this.service.createForm(this.config);
-  }
+  ngOnInit() {}
 }
