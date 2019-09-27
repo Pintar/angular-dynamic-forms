@@ -6,6 +6,8 @@ import { BootstrapTextareaComponent } from './components/bootstrap-textarea/boot
 import { BootstrapDatepickerComponent } from './components/bootstrap-datepicker/bootstrap-datepicker.component';
 import { BootstrapCheckboxComponent } from './components/bootstrap-checkbox/bootstrap-checkbox.component';
 import { BootstrapRadioComponent } from './components/bootstrap-radio/bootstrap-radio.component';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,7 @@ import { BootstrapRadioComponent } from './components/bootstrap-radio/bootstrap-
     BootstrapCheckboxComponent,
     BootstrapRadioComponent
   ],
-  imports: [],
+  imports: [CommonModule, ReactiveFormsModule],
   exports: [BootstrapComponentsComponent, BootstrapInputComponent],
   entryComponents: [BootstrapInputComponent]
 })

@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SimpleFormConfig } from '../../interfaces/simple-form-config.interface';
+import { SimpleConstructedForm } from '../../interfaces/simple-constructed-form.interface';
+import { SimpleFormsService } from '../../services/simple-forms.service';
 
 @Component({
   selector: 'lib-simple-form-container',
@@ -7,8 +9,9 @@ import { SimpleFormConfig } from '../../interfaces/simple-form-config.interface'
 })
 export class SimpleFormContainerComponent implements OnInit {
   @Input() config: SimpleFormConfig;
+  @Input() formData: SimpleConstructedForm[];
 
-  constructor() {}
+  constructor(private service: SimpleFormsService) {}
 
   ngOnInit() {}
 
@@ -16,5 +19,7 @@ export class SimpleFormContainerComponent implements OnInit {
     return true;
   }
 
-  onSubmit() {}
+  onSubmit() {
+    console.log(this.service.getRootForm(this.formData).formGroup.value);
+  }
 }

@@ -1,1 +1,15 @@
-<p>bootstrap-input works!</p>
+<div class="form-group" [formGroup]="form">
+
+  <!-- <label [attr.for]="property" class="control-label">
+      {{label}}
+      <sup *ngIf="required"> *</sup>
+    </label>
+   -->
+  <input type="text" class="form-control" [formControlName]="formControlName">
+
+  <!--Loop through errors-->
+  <!-- <div class="help-block" *ngIf="showErrors()" class="error">
+    <app-form-error [error]="formControl!.errors "></app-form-error>
+  </div> -->
+
+</div>
