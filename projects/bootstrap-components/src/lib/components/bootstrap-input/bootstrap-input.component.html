@@ -8,8 +8,14 @@
   <input type="text" class="form-control" [formControlName]="formControlName">
 
   <!--Loop through errors-->
-  <!-- <div class="help-block" *ngIf="showErrors()" class="error">
-    <app-form-error [error]="formControl!.errors "></app-form-error>
-  </div> -->
+  <lib-simple-form-error [template]="customErrors"
+                         [constructedForm]="constructedForm"
+                         [errorMessages]="errorMessages">
+  </lib-simple-form-error>
 
+  <ng-template #customErrors let-errorMessage="errorMessage">
+    <small class="form-text text-muted">
+      {{errorMessage}}
+    </small>
+  </ng-template>
 </div>

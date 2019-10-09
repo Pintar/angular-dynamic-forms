@@ -10,6 +10,7 @@ import { of } from 'rxjs';
 import { BootstrapSelectComponent } from 'projects/bootstrap-components/src/lib/components/bootstrap-select/bootstrap-select.component';
 // tslint:disable-next-line:max-line-length
 import { BootstrapTextareaComponent } from 'projects/bootstrap-components/src/lib/components/bootstrap-textarea/bootstrap-textarea.component';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-bootstrap-examples',
@@ -37,6 +38,18 @@ export class BootstrapExamplesComponent implements OnInit {
       items: [
         {
           item: new SimpleInput<any>({ property: 'ime', value: 'aljaz' }, BootstrapInputComponent)
+        },
+        {
+          item: new SimpleInput<any>(
+            {
+              property: 'priimek',
+              label: 'required',
+              value: '',
+              validators: [Validators.required],
+              errors: [{ formErrorKey: 'required', formErrorDescription: 'Required field!' }]
+            },
+            BootstrapInputComponent
+          )
         },
         {
           item: new SimpleInput<any>({ property: 'masterChef', value: true }, BootstrapCheckboxComponent)

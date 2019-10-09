@@ -21,7 +21,8 @@ export class SimpleFormsService {
     items.forEach(x => {
       if (x.item.componentType === FormComponentType.formControl) {
         const controlData = x.item as SimpleFormControl<any>;
-        const newControl = new FormControl(controlData.controlOptions.value);
+        const validators = controlData.controlOptions.validators ? controlData.controlOptions.validators : [];
+        const newControl = new FormControl(controlData.controlOptions.value, validators);
         formGroup.addControl(controlData.controlOptions.property, newControl);
         const formData: SimpleConstructedForm = { formControl: newControl, formGroup, item: x.item };
         result = [...result, formData];

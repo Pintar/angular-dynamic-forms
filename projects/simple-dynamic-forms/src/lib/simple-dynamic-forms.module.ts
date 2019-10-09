@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ItemRendererComponent } from './components/item-renderer/item-renderer.component';
 import { FormSaveButtonDirective } from './directives/form-save-button.directive';
+import { SimpleFormErrorComponent } from './components/simple-form-error/simple-form-error.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +22,11 @@ import { FormSaveButtonDirective } from './directives/form-save-button.directive
     SimpleInputComponent,
     FormItemHostDirective,
     ItemRendererComponent,
-    FormSaveButtonDirective
+    FormSaveButtonDirective,
+    SimpleFormErrorComponent
   ],
   imports: [CommonModule, ReactiveFormsModule],
-  exports: [SimpleDynamicFormsComponent, SimpleFormContainerComponent, SimpleInputComponent],
+  exports: [SimpleDynamicFormsComponent, SimpleFormContainerComponent, SimpleInputComponent, SimpleFormErrorComponent],
   entryComponents: [SimpleInputComponent]
 })
 export class SimpleDynamicFormsModule {}

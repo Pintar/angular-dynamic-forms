@@ -1,0 +1,13 @@
+<ng-container *ngIf="canShowErrors()">
+  <ng-container *ngFor="let error of errors">
+
+    <small *ngIf="!template">
+      {{error}}
+    </small>
+
+    <ng-container *ngIf="template"
+                  [ngTemplateOutlet]="template"
+                  [ngTemplateOutletContext]="{errorMessage: error}">
+    </ng-container>
+  </ng-container>
+</ng-container>
