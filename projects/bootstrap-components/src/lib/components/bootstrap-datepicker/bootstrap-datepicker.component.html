@@ -1,1 +1,14 @@
-<p>bootstrap-datepicker works!</p>
+<div class="form-group" [formGroup]="form">
+  <div class="input-group">
+
+    <input class="form-control"
+           [formControlName]="formControlName"
+           ngbDatepicker #d="ngbDatepicker"
+           id="{{formControlName}}">
+
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">Dates</button>
+    </div>
+
+  </div>
+</div>

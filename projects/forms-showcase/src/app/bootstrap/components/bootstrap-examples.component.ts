@@ -11,6 +11,8 @@ import { BootstrapSelectComponent } from 'projects/bootstrap-components/src/lib/
 // tslint:disable-next-line:max-line-length
 import { BootstrapTextareaComponent } from 'projects/bootstrap-components/src/lib/components/bootstrap-textarea/bootstrap-textarea.component';
 import { Validators } from '@angular/forms';
+// tslint:disable-next-line:max-line-length
+import { BootstrapDatepickerComponent } from 'projects/bootstrap-components/src/lib/components/bootstrap-datepicker/bootstrap-datepicker.component';
 
 @Component({
   selector: 'app-bootstrap-examples',
@@ -53,6 +55,9 @@ export class BootstrapExamplesComponent implements OnInit {
         },
         {
           item: new SimpleInput<any>({ property: 'masterChef', value: true }, BootstrapCheckboxComponent)
+        },
+        {
+          item: new SimpleInput<any>({ property: 'releaseDate', value: null }, BootstrapDatepickerComponent)
         },
         {
           item: new SimpleInput<any>(
