@@ -14,7 +14,7 @@ import { BootstrapTextareaComponent } from 'projects/bootstrap-components/src/li
 @Component({
   selector: 'app-bootstrap-examples',
   templateUrl: './bootstrap-examples.component.html',
-  styleUrls: ['../../../../../../node_modules/bootstrap/dist/css/bootstrap.min.css']
+  styleUrls: ['./bootstrap-examples.component.scss']
 })
 export class BootstrapExamplesComponent implements OnInit {
   config: SimpleFormConfig = {

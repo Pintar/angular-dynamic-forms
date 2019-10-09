@@ -43,7 +43,11 @@
       "sourceRoot": "projects/forms-showcase/src",
       "projectType": "application",
       "prefix": "app",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "sass"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -58,7 +62,7 @@
               "projects/forms-showcase/src/assets"
             ],
             "styles": [
-              "projects/forms-showcase/src/styles.css"
+              "projects/forms-showcase/src/styles.scss"
             ],
             "scripts": [],
             "es5BrowserSupport": true
@@ -115,7 +119,7 @@
             "tsConfig": "projects/forms-showcase/tsconfig.spec.json",
             "karmaConfig": "projects/forms-showcase/karma.conf.js",
             "styles": [
-              "projects/forms-showcase/src/styles.css"
+              "projects/forms-showcase/src/styles.scss"
             ],
             "scripts": [],
             "assets": [
