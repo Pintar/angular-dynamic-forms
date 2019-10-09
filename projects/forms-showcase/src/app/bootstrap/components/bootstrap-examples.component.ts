@@ -43,7 +43,7 @@ export class BootstrapExamplesComponent implements OnInit {
           item: new SimpleInput<any>(
             {
               property: 'priimek',
-              label: 'required',
+              label: 'Priimek field is required',
               value: '',
               validators: [Validators.required],
               errors: [{ formErrorKey: 'required', formErrorDescription: 'Required field!' }]

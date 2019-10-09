@@ -9,6 +9,14 @@ export abstract class SimpleBaseComponent implements SimpleComponentProperties {
 
   constructor() {}
 
+  get labelText() {
+    return (this.simpleFormItem.item as SimpleFormControl<any>).controlOptions.label;
+  }
+
+  get formControl() {
+    return this.formData.formControl;
+  }
+
   get formControlName() {
     return (this.simpleFormItem.item as SimpleFormControl<any>).controlOptions.property;
   }

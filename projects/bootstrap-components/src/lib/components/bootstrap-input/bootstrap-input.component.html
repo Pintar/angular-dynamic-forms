@@ -1,11 +1,11 @@
 <div class="form-group" [formGroup]="form">
+  <!-- Label -->
+  <lib-simple-form-label [labelText]="labelText"
+                         [formControlRef]="formControl"
+                         [property]="formControlName">
+  </lib-simple-form-label>
 
-  <!-- <label [attr.for]="property" class="control-label">
-      {{label}}
-      <sup *ngIf="required"> *</sup>
-    </label>
-   -->
-  <input type="text" class="form-control" [formControlName]="formControlName">
+  <input type="text" class="form-control" [formControlName]="formControlName" id="{{formControlName}}">
 
   <!--Loop through errors-->
   <lib-simple-form-error [template]="customErrors"
