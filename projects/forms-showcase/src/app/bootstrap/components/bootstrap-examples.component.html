@@ -1,10 +1,10 @@
 <div class="container">
-    
+
   <h1>Bootstrap examples</h1>
 
   <div class="row">
     <div class="col-6">
-      <lib-simple-form-container [config]="config" [formData]="formData">
+      <lib-simple-form-container [config]="config" [formData]="formData" *ngIf="config">
         <h2 form-header>
           Form
         </h2>
@@ -12,3 +12,7 @@
     </div>
   </div>
 </div>
+
+<ng-template #saveButtonTemplate let-submit="onSubmit">
+  <button type="submit" class="btn btn-primary" (click)="submit()">Save</button>
+</ng-template>

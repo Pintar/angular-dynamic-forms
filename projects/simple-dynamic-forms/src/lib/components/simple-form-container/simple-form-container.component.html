@@ -5,6 +5,13 @@
   <lib-item-renderer *ngFor="let item of config.items;" [formItem]="item" [formData]="formData"></lib-item-renderer>
 
   <div class="simple-form-row">
-    <button type="submit" (click)="onSubmit()" [disabled]="!canSave()">Save</button>
+    <ng-container *ngIf="!hasSaveButtonTemplate()">
+      <button type="submit" (click)="onSubmit()" [disabled]="!canSave()">Save</button>
+    </ng-container>
+
+    <ng-container *ngIf="hasSaveButtonTemplate()"
+                  [ngTemplateOutlet]="formSaveButtonTemplate"
+                  [ngTemplateOutletContext]="saveButtonContext">
+    </ng-container>
   </div>
 </form>

@@ -23,6 +23,21 @@ export class SimpleFormContainerComponent implements OnInit {
     console.log(this.service.getRootForm(this.formData).formGroup.value);
   }
 
+  hasSaveButtonTemplate(): boolean {
+    return this.config.formSaveButtonTemplate ? true : false;
+  }
+
+  get saveButtonContext() {
+    return {
+      onSubmit: this.onSubmit.bind(this),
+      canSave: this.canSave.bind(this)
+    };
+  }
+
+  get formSaveButtonTemplate() {
+    return this.config.formSaveButtonTemplate;
+  }
+
   get form() {
     return this.formData[0].formGroup;
   }

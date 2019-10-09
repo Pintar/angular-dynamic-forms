@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef, ChangeDetectorRef } from '@angular/core';
 import { SimpleFormConfig } from 'projects/simple-dynamic-forms/src/lib/interfaces/simple-form-config.interface';
 import { SimpleInput } from 'projects/simple-dynamic-forms/src/lib/models/simple-input.model';
 import { BootstrapInputComponent } from 'projects/bootstrap-components/src/lib/components/bootstrap-input/bootstrap-input.component';
@@ -17,34 +17,45 @@ import { BootstrapTextareaComponent } from 'projects/bootstrap-components/src/li
   styleUrls: ['./bootstrap-examples.component.scss']
 })
 export class BootstrapExamplesComponent implements OnInit {
-  config: SimpleFormConfig = {
-    items: [
-      {
-        item: new SimpleInput<any>({ property: 'ime', value: 'aljaz' }, BootstrapInputComponent)
-      },
-      {
-        item: new SimpleInput<any>({ property: 'masterChef', value: true }, BootstrapCheckboxComponent)
-      },
-      {
-        item: new SimpleInput<any>(
-          {
-            property: 'izbira',
-            value: 2,
-            options: of([{ id: 1, value: 'enka' }, { id: 2, value: 'dvojka' }])
-          },
-          BootstrapSelectComponent
-        )
-      },
-      {
-        item: new SimpleInput<any>({ property: 'description', value: 'description' }, BootstrapTextareaComponent)
-      }
-    ]
-  };
+  @ViewChild('saveButtonTemplate', { static: false }) saveButton: TemplateRef<any>;
+
+  config: SimpleFormConfig;
   formData: SimpleConstructedForm[];
 
-  constructor(private service: SimpleFormsService) {}
+  constructor(private service: SimpleFormsService, private changeDetector: ChangeDetectorRef) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  ngAfterViewInit() {
+    this.config = this.createConfig();
     this.formData = this.service.createForm(this.config);
+    this.changeDetector.detectChanges();
+  }
+
+  createConfig(): SimpleFormConfig {
+    return {
+      items: [
+        {
+          item: new SimpleInput<any>({ property: 'ime', value: 'aljaz' }, BootstrapInputComponent)
+        },
+        {
+          item: new SimpleInput<any>({ property: 'masterChef', value: true }, BootstrapCheckboxComponent)
+        },
+        {
+          item: new SimpleInput<any>(
+            {
+              property: 'izbira',
+              value: 2,
+              options: of([{ id: 1, value: 'enka' }, { id: 2, value: 'dvojka' }])
+            },
+            BootstrapSelectComponent
+          )
+        },
+        {
+          item: new SimpleInput<any>({ property: 'description', value: 'description' }, BootstrapTextareaComponent)
+        }
+      ],
+      formSaveButtonTemplate: this.saveButton
+    };
   }
 }
