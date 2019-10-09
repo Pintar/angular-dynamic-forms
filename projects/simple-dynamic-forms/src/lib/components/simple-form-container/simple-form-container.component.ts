@@ -22,4 +22,8 @@ export class SimpleFormContainerComponent implements OnInit {
   onSubmit() {
     console.log(this.service.getRootForm(this.formData).formGroup.value);
   }
+
+  get form() {
+    return this.formData[0].formGroup;
+  }
 }

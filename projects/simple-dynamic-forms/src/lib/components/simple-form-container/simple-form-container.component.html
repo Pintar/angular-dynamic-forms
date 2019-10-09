@@ -1,8 +1,10 @@
-<ng-content select=[form-header]>
-</ng-content>
+<form [formGroup]="form">
+  <ng-content select=[form-header]>
+  </ng-content>
 
-<lib-item-renderer *ngFor="let item of config.items;" [formItem]="item" [formData]="formData"></lib-item-renderer>
+  <lib-item-renderer *ngFor="let item of config.items;" [formItem]="item" [formData]="formData"></lib-item-renderer>
 
-<div class="simple-form-row">
-  <button type="submit" (click)="onSubmit()" [disabled]="!canSave()">Save</button>
-</div>
+  <div class="simple-form-row">
+    <button type="submit" (click)="onSubmit()" [disabled]="!canSave()">Save</button>
+  </div>
+</form>
