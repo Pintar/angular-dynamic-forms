@@ -23,4 +23,8 @@ export abstract class SimpleBaseComponent implements SimpleComponentProperties {
   get form() {
     return this.formData.formGroup;
   }
+
+  get errorMessages() {
+    return (this.simpleFormItem.item as SimpleFormControl<any>).controlOptions.errors;
+  }
 }

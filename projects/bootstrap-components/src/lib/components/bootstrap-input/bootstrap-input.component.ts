@@ -12,12 +12,4 @@ export class BootstrapInputComponent extends SimpleBaseComponent implements OnIn
   }
 
   ngOnInit() {}
-
-  get constructedForm() {
-    return this.formData;
-  }
-
-  get errorMessages() {
-    return (this.simpleFormItem.item as SimpleFormControl<any>).controlOptions.errors;
-  }
 }
