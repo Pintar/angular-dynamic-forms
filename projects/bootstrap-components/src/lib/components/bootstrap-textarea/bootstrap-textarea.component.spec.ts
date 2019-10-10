@@ -1,8 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { BootstrapTextareaComponent } from './bootstrap-textarea.component';
 import { FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { SimpleFormControl } from 'projects/simple-dynamic-forms/src/lib/interfaces/simple-form-control.interface';
+import { BootstrapCommonComponent } from '../bootstrap-common/bootstrap-common.component';
+import { MockComponent } from 'ng-mocks';
 
 describe('BootstrapTextareaComponent', () => {
   let component: BootstrapTextareaComponent;
@@ -11,7 +12,7 @@ describe('BootstrapTextareaComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ReactiveFormsModule],
-      declarations: [BootstrapTextareaComponent]
+      declarations: [BootstrapTextareaComponent, MockComponent(BootstrapCommonComponent)]
     }).compileComponents();
   }));
 

@@ -1,14 +1,16 @@
 <div class="form-group" [formGroup]="form">
-  <div class="input-group">
+  <lib-bootstrap-common [data]="commonData">
+    <div class="input-group">
 
-    <input class="form-control"
-           [formControlName]="formControlName"
-           ngbDatepicker #d="ngbDatepicker"
-           id="{{formControlName}}">
+      <input class="form-control"
+             [formControlName]="formControlName"
+             ngbDatepicker #d="ngbDatepicker"
+             id="{{formControlName}}">
 
-    <div class="input-group-append">
-      <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">Dates</button>
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">Dates</button>
+      </div>
+
     </div>
-
-  </div>
+  </lib-bootstrap-common>
 </div>

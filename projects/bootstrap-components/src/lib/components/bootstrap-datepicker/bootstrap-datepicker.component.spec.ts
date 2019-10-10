@@ -4,6 +4,8 @@ import { BootstrapDatepickerComponent } from './bootstrap-datepicker.component';
 import { ReactiveFormsModule, FormControl, FormBuilder } from '@angular/forms';
 import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
 import { SimpleFormControl } from 'projects/simple-dynamic-forms/src/lib/interfaces/simple-form-control.interface';
+import { MockComponent } from 'ng-mocks';
+import { BootstrapCommonComponent } from '../bootstrap-common/bootstrap-common.component';
 
 describe('BootstrapDatepickerComponent', () => {
   let component: BootstrapDatepickerComponent;
@@ -12,7 +14,7 @@ describe('BootstrapDatepickerComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ReactiveFormsModule, NgbDatepickerModule],
-      declarations: [BootstrapDatepickerComponent]
+      declarations: [BootstrapDatepickerComponent, MockComponent(BootstrapCommonComponent)]
     }).compileComponents();
   }));
 

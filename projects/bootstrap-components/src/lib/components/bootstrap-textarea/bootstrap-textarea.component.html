@@ -1,3 +1,5 @@
 <div class="form-group" [formGroup]="form">
-  <textarea rows="4" class="form-control" [formControlName]="formControlName"></textarea>
+  <lib-bootstrap-common [data]="commonData">
+    <textarea rows="4" class="form-control" [formControlName]="formControlName"></textarea>
+  </lib-bootstrap-common>
 </div>

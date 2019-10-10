@@ -2,6 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BootstrapSelectComponent } from './bootstrap-select.component';
 import { ReactiveFormsModule, FormControl, FormBuilder } from '@angular/forms';
+import { MockComponent } from 'ng-mocks';
+import { BootstrapCommonComponent } from '../bootstrap-common/bootstrap-common.component';
 
 describe('BootstrapSelectComponent', () => {
   let component: BootstrapSelectComponent;
@@ -9,7 +11,7 @@ describe('BootstrapSelectComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [BootstrapSelectComponent],
+      declarations: [BootstrapSelectComponent, MockComponent(BootstrapCommonComponent)],
       imports: [ReactiveFormsModule]
     }).compileComponents();
   }));
