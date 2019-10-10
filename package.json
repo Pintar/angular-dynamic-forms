@@ -11,6 +11,7 @@
     "format:check": "prettier --list-different 'projects/**/*.ts'",
     "format:write": "prettier --write 'projects/**/*.ts'",
     "test:lib-coverage": "ng test simple-dynamic-forms --code-coverage --watch=false",
+    "test:bootstrap": "ng test bootstrap-components",
     "report-coverage:lib": "cat ./coverage/simple-dynamic-forms/lcov.info | codecov",
     "build": "npm run build:lib && npm run build:demo",
     "build:lib": "npm run copy:readme && ng build simple-dynamic-forms",
