@@ -1,21 +1,7 @@
 <div class="form-group" [formGroup]="form">
-  <!-- Label -->
-  <lib-simple-form-label [labelText]="labelText"
-                         [formControlRef]="formControl"
-                         [property]="formControlName">
-  </lib-simple-form-label>
 
-  <input type="text" class="form-control" [formControlName]="formControlName" id="{{formControlName}}">
+  <lib-bootstrap-common [data]="commonData">
+    <input type="text" class="form-control" [formControlName]="formControlName" id="{{formControlName}}">
+  </lib-bootstrap-common>
 
-  <!--Loop through errors-->
-  <lib-simple-form-error [template]="customErrors"
-                         [constructedForm]="formData"
-                         [errorMessages]="errorMessages">
-  </lib-simple-form-error>
-
-  <ng-template #customErrors let-errorMessage="errorMessage">
-    <small class="form-text text-muted">
-      {{errorMessage}}
-    </small>
-  </ng-template>
 </div>

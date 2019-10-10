@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SimpleDynamicFormsModule } from 'projects/simple-dynamic-forms/src/public-api';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BootstrapCommonComponent } from './components/bootstrap-common/bootstrap-common.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BootstrapTextareaComponent,
     BootstrapDatepickerComponent,
     BootstrapCheckboxComponent,
-    BootstrapRadioComponent
+    BootstrapRadioComponent,
+    BootstrapCommonComponent
   ],
   imports: [CommonModule, ReactiveFormsModule, SimpleDynamicFormsModule, NgbModule],
   exports: [

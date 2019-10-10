@@ -6,6 +6,7 @@ import { MockComponent } from 'ng-mocks';
 import { SimpleFormLabelComponent } from 'projects/simple-dynamic-forms/src/lib/components/simple-form-label/simple-form-label.component';
 import { SimpleFormErrorComponent } from 'projects/simple-dynamic-forms/src/lib/components/simple-form-error/simple-form-error.component';
 import { SimpleFormControl } from 'projects/simple-dynamic-forms/src/lib/interfaces/simple-form-control.interface';
+import { BootstrapCommonComponent } from '../bootstrap-common/bootstrap-common.component';
 
 describe('BootstrapInputComponent', () => {
   let component: BootstrapInputComponent;
@@ -14,11 +15,7 @@ describe('BootstrapInputComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ReactiveFormsModule],
-      declarations: [
-        BootstrapInputComponent,
-        MockComponent(SimpleFormLabelComponent),
-        MockComponent(SimpleFormErrorComponent)
-      ]
+      declarations: [BootstrapInputComponent, MockComponent(BootstrapCommonComponent)]
     }).compileComponents();
   }));
 
