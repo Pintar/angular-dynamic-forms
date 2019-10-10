@@ -39,13 +39,20 @@ export class BootstrapExamplesComponent implements OnInit {
     return {
       items: [
         {
-          item: new SimpleInput<any>({ property: 'ime', value: 'aljaz' }, BootstrapInputComponent)
+          item: new SimpleInput<any>(
+            {
+              label: 'Name',
+              property: 'name',
+              value: 'aljaz'
+            },
+            BootstrapInputComponent
+          )
         },
         {
           item: new SimpleInput<any>(
             {
-              property: 'priimek',
-              label: 'Priimek field is required',
+              property: 'lastName',
+              label: 'LastName field is required',
               value: '',
               validators: [Validators.required],
               errors: [{ formErrorKey: 'required', formErrorDescription: 'Required field!' }]
@@ -54,23 +61,38 @@ export class BootstrapExamplesComponent implements OnInit {
           )
         },
         {
-          item: new SimpleInput<any>({ property: 'masterChef', value: true }, BootstrapCheckboxComponent)
-        },
-        {
-          item: new SimpleInput<any>({ property: 'releaseDate', value: null }, BootstrapDatepickerComponent)
+          item: new SimpleInput<any>(
+            {
+              property: 'releaseDate',
+              value: null,
+              label: 'Release date'
+            },
+            BootstrapDatepickerComponent
+          )
         },
         {
           item: new SimpleInput<any>(
             {
-              property: 'izbira',
+              property: 'choice',
               value: 2,
+              label: 'Select value',
               options: of([{ id: 1, value: 'enka' }, { id: 2, value: 'dvojka' }])
             },
             BootstrapSelectComponent
           )
         },
         {
-          item: new SimpleInput<any>({ property: 'description', value: 'description' }, BootstrapTextareaComponent)
+          item: new SimpleInput<any>(
+            {
+              property: 'description',
+              value: 'description',
+              label: 'Description'
+            },
+            BootstrapTextareaComponent
+          )
+        },
+        {
+          item: new SimpleInput<any>({ property: 'masterChef', value: true }, BootstrapCheckboxComponent)
         }
       ],
       formSaveButtonTemplate: this.saveButton
